@@ -1,0 +1,21 @@
+language: 
+ — ruby
+rvm:
+ — 3.0.0
+cache:
+ — bundler
+script:
+ — bundle install
+ — bin/rails db:create
+ — bin/rails db:migrate
+ — bundle exec rspec
+services:
+ — sqlite3
+# deployment details - add while setting up Heroku 
+deploy:
+  provider: heroku
+ api_key:
+  secure: "ENCRYPTED_KEY_HERE"
+app: heroku-app-name-here
+  on:
+ repo: github-username-here/repo-name-here
