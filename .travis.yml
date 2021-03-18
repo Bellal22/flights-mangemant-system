@@ -1,21 +1,19 @@
-language: 
- — ruby
+language: ruby
 rvm:
- — 3.0.0
+- 3.0.0
 cache:
- — bundler
+- bundler
 script:
- — bundle install
- — bin/rails db:create
- — bin/rails db:migrate
- — bundle exec rspec
+- bundle install
+- bin/rails db:create
+- bin/rails db:migrate
+- bundle exec rspec
 services:
- — sqlite3
-# deployment details - add while setting up Heroku 
+- postgresql
 deploy:
   provider: heroku
- api_key:
-  secure: "ENCRYPTED_KEY_HERE"
+  api_key:
+    secure: Ia3tD4+v+Cb/M5MyNyylScQcawLWXrt0LE88Hgyj539z3AADlULjdYerTg4Pxf5yeavf/Wo6jdO9B61ojA4qqxHHj6/dQ7TLwX7bNafYMk4yByoq7Grw6V3s+b3jhBLwNZ3Ygv5x7N2/yVz/VpGfjk6YOQ/imKgZeUf9NA3q/dlLCsEYgtJDxP6x/fNcbTLvHHkeAaHDmOxbw1KGxlQtRrfCVrSOgb7gPYk2cyp9Yy9XcdGh6ar0jn4BZSgiRPe0g+nZq/lrjg1wx0yhTHs5FMLGq300JuPhngTs5PrDQNABP7QZMCl8Yl/GM2DnsfcVW3V4TiqeVwaEaSGWvQeTRu2iByYylN91Ek1LheaExhgj2QpLm02Jw7+wEiCNs+0YxmkGUVXPLLsETcgQ8jZLdyPtTPFc9pv+SRs/ls5T5Cv15p+fqYMIVS4MeJUJ8IQiITJlCm5KvdwAAhANT+8W6c3aOaF31szxAII+ttAr1ZvgMhZ+Igvd/xCr5D6NOG0886b4BwvxnDNVrAbvUGJzlFX9zdJ4RQgV+NFO0AmynVB1p02iQGDr7ZE6E8RN4XDTmLEqxD8qsGmIK13F4j0FrbCYMfOluKpNYW9/rd2Jtr9DYJ91gMqLV0wAIOeOHZn/Civx8+WCtV40npBCKCOZleoiAM6qP9grEypHncIzDzw=
 app: heroku-app-name-here
-  on:
- repo: github-username-here/repo-name-here
+true:
+  repo: github-username-here/repo-name-here
